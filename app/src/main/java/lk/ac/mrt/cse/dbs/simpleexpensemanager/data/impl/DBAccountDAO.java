@@ -135,6 +135,7 @@ public class DBAccountDAO implements AccountDAO {
         database.insert(SQLiteHelper.TABLE_ACCOUNT, null, values);
         database.close();
 
+
     }
 
     @Override
