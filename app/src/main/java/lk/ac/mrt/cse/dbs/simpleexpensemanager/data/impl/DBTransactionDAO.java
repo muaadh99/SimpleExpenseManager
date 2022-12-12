@@ -119,8 +119,8 @@ public class DBTransactionDAO implements TransactionDAO {
 
         }
         if (size > limit) {
-            for (int i = 0; i < size - limit; i++) {
-                transaction.remove(0);
+            if (size - limit > 0) {
+                transaction.subList(0, size - limit).clear();
             }
         }
         cursor.close();
