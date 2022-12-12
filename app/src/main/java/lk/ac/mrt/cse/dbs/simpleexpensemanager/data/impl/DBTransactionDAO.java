@@ -47,7 +47,7 @@ public class DBTransactionDAO implements TransactionDAO {
 
     @Override
     public List<Transaction> getAllTransactionLogs() throws ParseException {
-        List<Transaction> transaction = new ArrayList<Transaction>();
+        List<Transaction> transaction = new ArrayList<>();
 
         database = helper.getReadableDatabase();
 
@@ -84,7 +84,7 @@ public class DBTransactionDAO implements TransactionDAO {
 
     @Override
     public List<Transaction> getPaginatedTransactionLogs(int limit) throws ParseException {
-        List<Transaction> transaction = new ArrayList<Transaction>();
+        List<Transaction> transaction = new ArrayList<>();
 
         database = helper.getReadableDatabase();
 
@@ -123,6 +123,7 @@ public class DBTransactionDAO implements TransactionDAO {
                 transaction.remove(0);
             }
         }
+        cursor.close();
         return transaction;
     }
 }
